@@ -14,4 +14,3 @@ while ($balance > 0) {
     $balance -= $fund_raising;
 }
 echo 'あなたはこれ以上募金できません。';
-

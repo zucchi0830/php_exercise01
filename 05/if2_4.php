@@ -9,7 +9,7 @@ $blood_type = 'X';
 // $blood_typeがOの場合、 O型の方はおおらからしいです！ と出力
 // $blood_typeが上記以外の場合、 判定不能です！ と出力
 switch ($blood_type) {
-    case 'A': 
+    case 'A':
         echo 'A型の方は几帳面だけど優しいらしいです！';
         break;
 
@@ -17,7 +17,7 @@ switch ($blood_type) {
         echo 'B型の方は好奇心旺盛らしいです！';
         break;
 
-    case 'AB': 
+    case 'AB':
         echo 'AB型の方は先読み思考に優れた天才らしいです！';
         break;
 
