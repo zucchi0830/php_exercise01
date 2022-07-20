@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    elseif (empty($msg1 && $msg2 && $msg3)) {
+    else {
         $err_msg = '全てに数字を入力してください。';
     }
 }

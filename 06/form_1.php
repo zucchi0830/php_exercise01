@@ -4,7 +4,7 @@ $msg = '';
 $err_msg = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $msg = '私は' . $_POST['message'] . '歳です';
+    $msg = $_POST['message'];
 }
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </form>
     <div>
-        <?= htmlspecialchars($msg, ENT_QUOTES, 'UTF-8') ?>
+        <?php if (!empty($msg)) : ?>
+            <?= htmlspecialchars('私は' . $msg . '歳です', ENT_QUOTES, 'UTF-8') ?>
+        <?php endif; ?>
     </div>
 </body>
 
