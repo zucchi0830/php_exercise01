@@ -1,16 +1,15 @@
 <?php
 
-$judge_ment = '';
+$score = '';
 $err_msg = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'get') {
-    $judge_ment = $_GET['jundge_ment'];
-    if (empty($judge_ment)) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $score = $_POST['score'];
+    if (empty($score)) {
         $err_msg = '点数が入力されていません。';
-    }
-    if ($judge_ment) {
-        // thankyou.phpにリダイレクト
-        header('Location: 03_judge_ment.php');
+    } else {
+        // 03_judge_ment.phpにリダイレクト
+        header('Location: 03_judge_ment.php?judge_ment=' . $score);
         exit;
     }
 }
@@ -29,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'get') {
 
 <body>
     <!-- //ここにコードを追記 -->
-    <?php if (empty($judge_ment)) : ?>
+    <?php if (empty($score)) : ?>
         <h1>点数を入力してください</h1>
     <?php endif; ?>
 
@@ -38,8 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'get') {
             <li><?= $err_msg ?></li>
         </ul>
     <?php endif; ?>
-    <form action="03_judge_ment.php" method="get">
-        <input type="number" name="judge_ment">
+
+    <form action="" method="post">
+        <input type="number" name="score">
         <input type="submit" value="送信">
     </form>
 </body>

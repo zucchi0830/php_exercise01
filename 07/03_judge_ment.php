@@ -1,6 +1,6 @@
 <?php
-    $judge_ment = $_GET['jundge_ment'];
-    ?>
+$score = $_GET['judge_ment'];
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -13,7 +13,7 @@
 
 <body>
     <!-- 点数が60以上の場合、合格 と出力,点数が60未満の場合、不合格 と出力 -->
-    <?php if ($judgement >= 60) : ?>
+    <?php if ($score >= 60) : ?>
         <?= "<h1>合格です</h1>" ?>
     <?php else : ?>
         <?= "<h1>不合格です</h1>" ?>
