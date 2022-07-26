@@ -10,7 +10,7 @@ $msg ='';
 
 //  ここにコードを追記
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $msg = $_POST['stylist'];
+    $msg = $_POST['select_stylist'];
 }
 ?>
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>希望する美容師のランクを選んでください</h1>
     <form action="" method="post">
-        <select name="stylist" id="type">
+        <select name="select_stylist" id="type">
             <!-- ここにコードを追記 -->
             <?php foreach ($stylists as $key => $name) :
                 echo '<option value="' . $key . '">' . $key . '</option>';

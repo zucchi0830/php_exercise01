@@ -26,17 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- //ここにコードを追記 -->
     <?php if (empty($score)) : ?>
         <h1>点数を入力してください</h1>
+    <!-- 点数が60以上の場合、合格 と出力,点数が60未満の場合、不合格 と出力 -->
+    <?php elseif ($score >= 60) : ?>
+        <?= "<h1>合格です</h1>" ?>
+    <?php else : ?>
+        <?= "<h1>不合格です</h1>" ?>
     <?php endif; ?>
 
     <?php if (!empty($err_msg)) : ?>
         <ul>
             <li><?= $err_msg ?></li>
         </ul>
-        <!-- 点数が60以上の場合、合格 と出力,点数が60未満の場合、不合格 と出力 -->
-    <?php elseif ($score >= 60) : ?>
-        <?= "<h1>合格です</h1>" ?>
-    <?php elseif ((!empty($score)) && $score < 60) : ?>
-        <?= "<h1>不合格です</h1>" ?>
     <?php endif; ?>
 
     <form action="" method="post">
